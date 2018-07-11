@@ -1,0 +1,37 @@
+.CityCard-card {
+    justify-content: space-between;
+}
+
+.CityCard-content {
+    height: auto;
+}
+
+.CityCard-main {
+    min-height: 267px;
+}
+
+.CityCard-footer {
+    background-color: rgba(248,248,248, 0.5);
+}
+
+.CityCard-main > .CityCard-footer {
+    min-height: 85px;
+}
+
+.CityCard-alt {
+    min-height: 222px;
+}
+
+.CityCard-alt > .CityCard-footer {
+    min-height: 40px;
+}
+
+@media screen and (max-width: 599px) {
+    .CityCard-main {
+        order: 1;        
+    }
+    
+    .CityCard-alt {
+        order: 2;
+    }
+}

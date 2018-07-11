@@ -29,33 +29,3 @@
     font-weight: 500;
     color: #737c84;
 }
-
-.Card-content {
-    height: auto;
-}
-
-.Card-main {
-    min-height: 267px;
-}
-
-.Card-main > .Card-footer {
-    min-height: 85px;
-}
-
-.Card-alt {
-    min-height: 222px;
-}
-
-.Card-alt > .Card-footer {
-    min-height: 50px;
-}
-
-@media screen and (max-width: 599px) {
-    .Card-main {
-        order: 1;        
-    }
-    
-    .Card-alt {
-        order: 2;
-    }
-}

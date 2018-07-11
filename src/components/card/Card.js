@@ -2,14 +2,14 @@ import React from 'react';
 
 import './Card.css';
 
-const Card = ({type = 'alt', title}) => (
-    <article className={`Card-container Card-${type} flex`}>
+const Card = ({className, title, children}) => (
+    <article className={`Card-container flex ${className}`}>
         {!!title && (
             <h3 className="Card-title flex">
                 {title}
             </h3>
         )}
-        
+        {children}
     </article>
 );
 
