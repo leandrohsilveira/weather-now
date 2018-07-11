@@ -1,5 +1,4 @@
 .Card-container {
-    display: flex;
     align-self: center;
     flex-direction: column;
 
@@ -19,7 +18,6 @@
 }
 
 .Card-title {
-    display: flex;
     flex-direction: column;
     justify-content: center;
     height: 42px;

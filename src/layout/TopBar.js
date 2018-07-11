@@ -5,7 +5,7 @@ import './TopBar.css';
 
 const TopBar = (props) => (
     <header className="TopBar-header">
-        <div className="TopBar-content">
+        <div className="TopBar-content flex">
             <img className="TopBar-logo" src={logo} alt="WeatherNow Logo" />
         </div>
     </header>

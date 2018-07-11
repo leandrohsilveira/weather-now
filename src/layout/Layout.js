@@ -6,8 +6,8 @@ import './Layout.css';
 const Layout = ({ children }) => (
     <Fragment>
         <TopBar />
-        <main className="Layout-main">
-            <div className="Layout-container">
+        <main className="Layout-main flex">
+            <div className="Layout-container flex">
                 {children}
             </div>
         </main>
