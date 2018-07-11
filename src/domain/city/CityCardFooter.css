@@ -1,5 +1,6 @@
 .CityCardFooter-container {
-    background-color: rgba(248, 248, 248, 0.5);
+    flex-direction: column;
+    background-color: rgba(248, 248, 248, 1);
 }
 
 .CityCardFooter-main {
@@ -8,4 +9,22 @@
 
 .CityCardFooter-alt {
     min-height: 40px;
+}
+
+.CityCardFooter-updated {
+    font-size: 0.65em;
+    color: #b4b4b4;
+    align-self: center;
+}
+
+.CityCardFooter-updated.main {
+    align-self: start;
+}
+
+.CityCardFooter-row-top {
+    flex: 6;
+}
+
+.CityCardFooter-row-bottom {
+    flex: 6;
 }
