@@ -8,24 +8,12 @@
     height: auto;
 }
 
-.CityCard-footer {
-    background-color: rgba(248,248,248, 0.5);
-}
-
 .CityCard-main {
     min-height: 267px;
 }
 
-.CityCard-main > .CityCard-container > .CityCard-footer {
-    min-height: 85px;
-}
-
 .CityCard-alt {
     min-height: 222px;
-}
-
-.CityCard-alt > .CityCard-container > .CityCard-footer {
-    min-height: 40px;
 }
 
 @media screen and (max-width: 599px) {

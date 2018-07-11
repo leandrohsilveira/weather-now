@@ -1,0 +1,11 @@
+.CityCardFooter-container {
+    background-color: rgba(248, 248, 248, 0.5);
+}
+
+.CityCardFooter-main {
+    min-height: 85px;
+}
+
+.CityCardFooter-alt {
+    min-height: 40px;
+}
