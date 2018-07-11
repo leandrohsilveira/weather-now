@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Layout from './layout/Layout';
-import CardGrid from './components/CardGrid';
-import Card from './components/Card';
+import CardGrid from './components/card/CardGrid';
+import Card from './components/card/Card';
 
 class App extends Component {
   render() {

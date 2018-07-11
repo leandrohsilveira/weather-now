@@ -18,25 +18,36 @@
 }
 
 .Card-title {
+    margin: 0;
     flex-direction: column;
     justify-content: center;
     height: 42px;
     text-align: center;
     border-bottom: 1px solid #ebebeb;
-}
 
-.Card-title > h3 {
     font-size: 1.12em;
     font-weight: 500;
     color: #737c84;
+}
+
+.Card-content {
+    height: auto;
 }
 
 .Card-main {
     min-height: 267px;
 }
 
+.Card-main > .Card-footer {
+    min-height: 85px;
+}
+
 .Card-alt {
-    min-height: 220px;
+    min-height: 222px;
+}
+
+.Card-alt > .Card-footer {
+    min-height: 50px;
 }
 
 @media screen and (max-width: 599px) {
