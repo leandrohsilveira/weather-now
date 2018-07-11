@@ -1,0 +1,13 @@
+.CardGrid-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+@media screen and (max-width: 599px) {
+
+    .CardGrid-section {
+        flex-direction: column;
+    }
+
+}

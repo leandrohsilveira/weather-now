@@ -1,0 +1,34 @@
+.Layout-main {
+    margin-top: 55px;
+    min-height: 835px;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.Layout-container {
+    -webkit-box-shadow: inset 0px 1px 1px 0px rgba(51,51,51,0.1);
+    -moz-box-shadow: inset 0px 1px 1px 0px rgba(51,51,51,0.1);
+    box-shadow: inset 0px 1px 1px 0px rgba(51,51,51,0.1);
+    background-color: #f1f1f1;
+    width: 1025px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media screen and (max-width: 1025px) {
+
+    .Layout-container {
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 599px) {
+    .Layout-container {
+        width: 100%;
+        justify-content: start;
+    }
+}
