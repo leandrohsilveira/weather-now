@@ -26,18 +26,25 @@
 }
 
 .Card-title > h3 {
+    font-size: 1.12em;
     font-weight: 500;
     color: #737c84;
 }
 
 .Card-main {
-    -webkit-box-ordinal-group: 1;
-    -moz-box-ordinal-group: 1;
-    box-ordinal-group: 1;
+    min-height: 267px;
 }
 
 .Card-alt {
-    -webkit-box-ordinal-group: 2;
-    -moz-box-ordinal-group: 2;
-    box-ordinal-group: 2;
+    min-height: 220px;
+}
+
+@media screen and (max-width: 599px) {
+    .Card-main {
+        order: 1;        
+    }
+    
+    .Card-alt {
+        order: 2;
+    }
 }
