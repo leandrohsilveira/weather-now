@@ -5,11 +5,13 @@ import './CityCard.css';
 
 const CityCard = ({title, type = 'alt'}) => (
     <Card title={title} className={`CityCard-card CityCard-${type}`}>
-        <div className="CityCard-content flex">
+        <div className={`CityCard-container flex`}>
+            <div className="CityCard-content flex">
 
-        </div>
-        <div className="CityCard-footer flex">
-        
+            </div>
+            <div className="CityCard-footer flex">
+            
+            </div>
         </div>
     </Card>
 );

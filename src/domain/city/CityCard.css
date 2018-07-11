@@ -1,4 +1,6 @@
-.CityCard-card {
+.CityCard-container {
+    flex: 1;
+    flex-direction: column;
     justify-content: space-between;
 }
 
@@ -6,15 +8,15 @@
     height: auto;
 }
 
-.CityCard-main {
-    min-height: 267px;
-}
-
 .CityCard-footer {
     background-color: rgba(248,248,248, 0.5);
 }
 
-.CityCard-main > .CityCard-footer {
+.CityCard-main {
+    min-height: 267px;
+}
+
+.CityCard-main > .CityCard-container > .CityCard-footer {
     min-height: 85px;
 }
 
@@ -22,7 +24,7 @@
     min-height: 222px;
 }
 
-.CityCard-alt > .CityCard-footer {
+.CityCard-alt > .CityCard-container > .CityCard-footer {
     min-height: 40px;
 }
 
