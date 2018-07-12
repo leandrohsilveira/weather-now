@@ -3,14 +3,15 @@ import { connect } from 'react-redux';
 
 import CardGrid from './../../components/card/CardGrid';
 import CityCard from './CityCard';
-import { restoreWeather } from './weather.actions';
+import { restoreWeather, restoreCityWeather } from './weather.actions';
 
 const mapStateToProps = state => ({
     cities: state.weather
 });
 
 const mapDispatchToProps = dispatch => ({
-    restore: () => dispatch(restoreWeather())
+    restoreAll: () => dispatch(restoreWeather()),
+    restore: (cityRef) => dispatch(restoreCityWeather(cityRef))
 });
 
 const WeatherScreen = (Comp => {
@@ -26,10 +27,10 @@ const WeatherScreen = (Comp => {
         interval = null;
 
         componentWillMount() {
-            const { restore } = this.props;
-            if (typeof restore === 'function') {
-                restore();
-                this.interval = setInterval(restore, 60000);
+            const { restoreAll } = this.props;
+            if (typeof restoreAll === 'function') {
+                restoreAll();
+                this.interval = setInterval(restoreAll, 60000);
             }
         }
 
@@ -52,11 +53,19 @@ const WeatherScreen = (Comp => {
                     {cities.map(city => (
                         <CityCard
                             {...city}
+                            onTryAgain={() => this.handleTryAgain(city.key)}
                         />
                     ))}
                 </CardGrid>
             )
         }
+
+        handleTryAgain = (cityRef) => {
+            const { restore } = this.props;
+            if (typeof restore === 'function') {
+                restore(cityRef);
+            }
+        };
 
         handlePropsChange = (nextProps) => {
             if (nextProps.cities) {
@@ -72,7 +81,7 @@ const WeatherScreen = (Comp => {
             } else {
                 this.setState({ cities: [] });
             }
-        }
+        };
 
     }
 );
