@@ -17,7 +17,7 @@ storiesOf('Card', module)
             <div>The card's content</div>
         </Card>
     ))
-    .add('when has both tile and content', () => (
+    .add('when has both title and content', () => (
         <Card title="City, CC">
             <div>The card's content</div>
         </Card>
