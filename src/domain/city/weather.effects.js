@@ -1,5 +1,6 @@
 import ACTION, { storeCityWeather, fetchCityWeather, fetchCityFailed } from './weather.actions';
 import { Cmd } from 'redux-loop';
+import moment from 'moment';
 import weatherService from './weather.service';
 
 const weatherEffects = (state, action) => {
@@ -25,10 +26,12 @@ const restoreEffect = (state) => {
     return Cmd.list(Object.keys(state).map(cityRef => {
         const local = window.localStorage.getItem(`app.store.weather.${cityRef}`);
         if(local) {
-            return Cmd.action(storeCityWeather(cityRef, JSON.parse(local), false));
-        } else {
-            return Cmd.action(fetchCityWeather(cityRef));
+            const city = JSON.parse(local);
+            if(moment(city.date).add(10, 'minutes').isAfter()) {
+                return Cmd.action(storeCityWeather(cityRef, city, false));
+            }
         }
+        return Cmd.action(fetchCityWeather(cityRef));
     }));
 };
 
