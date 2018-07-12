@@ -8,9 +8,15 @@
     "react-scripts": "1.1.4"
   },
   "scripts": {
+    "storybook": "start-storybook -p 9001 -c ./src/.storybook",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^3.4.8",
+    "@storybook/cli": "^3.4.8",
+    "@storybook/react": "^3.4.8"
   }
 }
