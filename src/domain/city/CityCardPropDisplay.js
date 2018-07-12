@@ -1,4 +1,5 @@
 import React from 'react';
+import numeral from 'numeral';
 
 import Grid from './../../components/grid/Grid';
 
@@ -10,7 +11,7 @@ const CityCardPropDisplay = ({label, value, unity}) => (
             {label}
         </Grid>
         <Grid direction="row" justifyContent="center">
-            <span className="CityCardPropDisplay-value">{value}</span>
+            <span className="CityCardPropDisplay-value">{numeral(value).format('0')}</span>
             <span className="CityCardPropDisplay-unity">{unity}</span>
         </Grid>
     </Grid>
