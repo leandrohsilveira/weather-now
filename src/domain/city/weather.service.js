@@ -1,10 +1,3 @@
-
-const weatherService = {
-    fetch: _fetch
-}
-
-export default weatherService;
-
 const _fetch = cityRef => {
     return fetch(`/api/weather?q=${cityRef}`)
             .then(response => {
@@ -19,3 +12,9 @@ const _fetch = cityRef => {
                 };
             });
 }
+
+const weatherService = {
+    fetch: _fetch
+}
+
+export default weatherService;
