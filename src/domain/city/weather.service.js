@@ -1,7 +1,11 @@
 const _fetch = cityRef => {
     return fetch(`/api/weather?q=${cityRef}`)
             .then(response => {
-                return response.json()
+                if(response.status >= 400) {
+                    const error = { message: response.statusText };
+                    throw error;
+                }
+                return response.json();
             })
             .then(({main}) => {
                 return {
