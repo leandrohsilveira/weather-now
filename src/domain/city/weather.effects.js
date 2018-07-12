@@ -27,8 +27,11 @@ const restoreEffect = (state) => {
         const local = window.localStorage.getItem(`app.store.weather.${cityRef}`);
         if(local) {
             const city = JSON.parse(local);
-            if(moment(city.date).add(10, 'minutes').isAfter()) {
+            if(!state[cityRef].date) {
                 return Cmd.action(storeCityWeather(cityRef, city, false));
+            }
+            if(moment(city.date).add(10, 'minutes').isBefore()) {
+                return null;
             }
         }
         return Cmd.action(fetchCityWeather(cityRef));
