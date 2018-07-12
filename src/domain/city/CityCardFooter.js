@@ -4,11 +4,11 @@ import Grid from './../../components/grid/Grid';
 import CityCardPropDisplay from './CityCardPropDisplay';
 import './CityCardFooter.css';
 
-const CityCardFooter = ({ type = 'alt', umidity, pressure }) => (
+const CityCardFooter = ({ type = 'alt', humidity, pressure }) => (
     <div className={`CityCardFooter-container CityCardFooter-${type} flex`}>
         {type === 'main' && (
             <Grid className="CityCardFooter-row-top" direction="row" justifyContent="space-around">
-                <CityCardPropDisplay label="Humidity" value={umidity} unity="%" />
+                <CityCardPropDisplay label="Humidity" value={humidity} unity="%" />
                 <CityCardPropDisplay label="Pressure" value={pressure} unity="hPa" />
             </Grid>
         )}

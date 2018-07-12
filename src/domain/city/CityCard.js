@@ -8,13 +8,27 @@ import CityCardError from './CityCardError';
 
 import './CityCard.css';
 
-const CityCard = ({ loading, title, value, umidity, pressure, unity, type = 'alt', error, onTryAgain }) => (
+const CityCard = ({ 
+    loading,
+    title,
+    value,
+    humidity,
+    pressure,
+    unity,
+    type = 'alt',
+    error,
+    onTryAgain 
+}) => (
     <Card title={title} className={`CityCard-card CityCard-${type}`}>
         <div className={`CityCard-container flex`}>
             <Loading loading={loading}>
                 <CityCardError error={error} onTryAgain={onTryAgain}>
                     <CityCardContent value={value} unity={unity} />
-                    <CityCardFooter type={type} umidity={umidity} pressure={pressure} />
+                    <CityCardFooter 
+                        type={type} 
+                        humidity={humidity} 
+                        pressure={pressure} 
+                    />
                 </CityCardError>
             </Loading>
         </div>

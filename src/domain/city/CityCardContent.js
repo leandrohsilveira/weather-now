@@ -1,4 +1,5 @@
 import React from 'react';
+import numeral from 'numeral';
 
 import './CityCardContent.css';
 
@@ -11,7 +12,7 @@ const CityCardContent = ({value, unity = '°'}) => {
     }
     return (
         <div className="CityCardContent-container flex">
-            <span className={`CityCardContent-value CityCardContent-${weather} flex`}>{value}</span>
+            <span className={`CityCardContent-value CityCardContent-${weather} flex`}>{numeral(value).format('0')}</span>
             <span className={`CityCardContent-unity CityCardContent-${weather} flex`}>{unity}</span>
         </div>
     );
