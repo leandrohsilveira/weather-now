@@ -24,7 +24,10 @@ const WeatherScreen = (Comp => {
         };
 
         componentWillMount() {
-            this.handlePropsChange(this.props);
+            const { restore } = this.props;
+            if(typeof restore === 'function') {
+                restore();
+            }
         }
 
         componentWillReceiveProps(nextProps) {
