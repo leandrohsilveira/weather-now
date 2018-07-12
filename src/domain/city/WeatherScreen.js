@@ -18,15 +18,18 @@ const WeatherScreen = (Comp => {
     return Comp;
 })(
     class _WeatherScreen extends Component {
-
+        
         state = {
             cities: []
         };
+
+        interval = null;
 
         componentWillMount() {
             const { restore } = this.props;
             if(typeof restore === 'function') {
                 restore();
+                this.interval = setInterval(restore, 60000);
             }
         }
 
@@ -34,6 +37,10 @@ const WeatherScreen = (Comp => {
             if(nextProps.cities !== this.props.cities) {
                 this.handlePropsChange(nextProps);
             }
+        }
+
+        componentWillUnmount() {
+
         }
 
         render() {
