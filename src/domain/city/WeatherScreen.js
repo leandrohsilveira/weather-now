@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 import CardGrid from './../../components/card/CardGrid';
 import CityCard from './CityCard';
@@ -18,7 +18,7 @@ const WeatherScreen = (Comp => {
     return Comp;
 })(
     class _WeatherScreen extends Component {
-        
+
         state = {
             cities: []
         };
@@ -27,20 +27,22 @@ const WeatherScreen = (Comp => {
 
         componentWillMount() {
             const { restore } = this.props;
-            if(typeof restore === 'function') {
+            if (typeof restore === 'function') {
                 restore();
                 this.interval = setInterval(restore, 60000);
             }
         }
 
         componentWillReceiveProps(nextProps) {
-            if(nextProps.cities !== this.props.cities) {
+            if (nextProps.cities !== this.props.cities) {
                 this.handlePropsChange(nextProps);
             }
         }
 
         componentWillUnmount() {
-
+            if (this.interval) {
+                this.interval();
+            }
         }
 
         render() {
@@ -48,7 +50,7 @@ const WeatherScreen = (Comp => {
             return (
                 <CardGrid>
                     {cities.map(city => (
-                        <CityCard 
+                        <CityCard
                             {...city}
                         />
                     ))}
@@ -57,7 +59,7 @@ const WeatherScreen = (Comp => {
         }
 
         handlePropsChange = (nextProps) => {
-            if(nextProps.cities) {
+            if (nextProps.cities) {
                 this.setState({
                     cities: Object.keys(nextProps.cities).map(cityRef => {
                         const city = nextProps.cities[cityRef];
@@ -68,7 +70,7 @@ const WeatherScreen = (Comp => {
                     })
                 });
             } else {
-                this.setState({cities: []});
+                this.setState({ cities: [] });
             }
         }
 
