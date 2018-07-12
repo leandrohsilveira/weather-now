@@ -11,7 +11,7 @@ const weatherEffects = (state, action) => {
         case ACTION.FETCH:
             return fetchEffect(payload.cityRef);
         case ACTION.STORE:
-            return storeEffect()
+            return storeEffect(payload);
         default:
             return null;
     }
@@ -41,7 +41,7 @@ const fetchEffect = (cityRef) => {
 };
 
 const storeEffect = ({cityRef, city, persist}) => {
-    if(persist) {
+    if(persist && city && cityRef) {
         window.localStorage.setItem(`app.store.weather.${cityRef}`, JSON.stringify(city));
     }
     return null;
