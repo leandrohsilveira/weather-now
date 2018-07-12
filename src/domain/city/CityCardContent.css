@@ -1,0 +1,17 @@
+.CityCardContent-container {
+    margin-top: 20px;
+    flex-direction: row;
+    justify-content: center;
+    align-self: center;
+}
+
+.CityCardContent-value {
+    justify-content: flex-start;
+    font-size: 5.5em;
+}
+
+.CityCardContent-unity {
+    padding-top: 13px;
+    justify-content: flex-start;
+    font-size: 3em;
+}
