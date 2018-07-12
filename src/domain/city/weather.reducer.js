@@ -21,6 +21,8 @@ const weatherReducer = (state = STATE, action) => {
     switch (action.type) {
         case ACTION.FETCH:
             return { ...state, [payload.cityRef]: { ...state[payload.cityRef], loading: true } };
+        case ACTION.FETCH_FAILED:
+            return { ...state, [payload.cityRef]: { ...state[payload.cityRef], error: payload.error, loading: false } };
         case ACTION.STORE:
             return { ...state, [payload.cityRef]: { ...state[payload.cityRef], ...payload.city, loading: false }};
         default:
