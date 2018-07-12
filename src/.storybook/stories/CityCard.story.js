@@ -16,5 +16,8 @@ storiesOf('CityCard', module)
         <CityCard title="City, CC" value={3} />
     ))
     .add('when the weather value is loading', () => (
-        <CityCard title="City, CC" value={null} />
+        <CityCard title="City, CC" loading={true} />
+    ))
+    .add('when something went wrong', () => (
+        <CityCard title="City, CC" error={true} onTryAgain={action('Trying again...')} />
     ))
