@@ -1,8 +1,9 @@
 import { configure } from '@storybook/react';
 
+const req = require.context('./stories', true, /\.story\.js$/)
+
 function loadStories() {
-  require('./stories/CityCard.story');
-  // You can require as many stories as you need.
+  req.keys().forEach((filename) => req(filename));
 }
 
 configure(loadStories, module);
