@@ -10,6 +10,7 @@ import './CityCard.css';
 
 const CityCard = ({ 
     loading,
+    date,
     title,
     value,
     humidity,
@@ -25,6 +26,7 @@ const CityCard = ({
                 <CityCardError error={error} onTryAgain={onTryAgain}>
                     <CityCardContent value={value} unity={unity} />
                     <CityCardFooter 
+                        date={date}
                         type={type} 
                         humidity={humidity} 
                         pressure={pressure} 
