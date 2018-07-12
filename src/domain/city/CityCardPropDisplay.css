@@ -1,5 +1,5 @@
 .CityCardPropDisplay-label {
-    margin-top: 3px;
+    margin-top: 5px;
     text-transform: uppercase;
     font-size: 0.72em;
     color: #b4b4b4;
@@ -7,7 +7,7 @@
 
 .CityCardPropDisplay-value {
     font-size: 1.1em;
-    margin-top: 3px;
+    margin-top: 5px;
     color: #737C84;
     align-self: baseline;
 }
