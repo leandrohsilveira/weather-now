@@ -1,10 +1,7 @@
 import { createStore, compose } from 'redux';
-import appReducer from 'app/app.reducer';
 import { install, Cmd, loop } from 'redux-loop';
 
-let store;
-
-export default () => {
+const createAppStore = (appReducer) => {
     const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
     if (devTools) {
         return createStore(appReducer, compose(install(), devTools));
@@ -12,6 +9,8 @@ export default () => {
         return createStore(appReducer, install());
     }
 };
+
+export default createAppStore;
 
 export function enhancedReducer(reducer, sideEffects) {
     return (state, action) => {
