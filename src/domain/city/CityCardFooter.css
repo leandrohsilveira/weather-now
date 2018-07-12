@@ -1,6 +1,7 @@
 .CityCardFooter-container {
     flex-direction: column;
     background-color: rgba(248, 248, 248, 1);
+    border-radius: 0 0 4px 4px;
 }
 
 .CityCardFooter-main {
