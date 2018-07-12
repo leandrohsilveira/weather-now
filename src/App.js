@@ -1,17 +1,33 @@
 import React, { Component } from 'react';
 import Layout from './layout/Layout';
-import CardGrid from './components/card/CardGrid';
-import CityCard from './domain/city/CityCard';
+import WeatherScreen from './domain/city/WeatherScreen';
+
+const cities = {
+  "Nuuk,GL": {
+    title: 'Nuuk, GL',
+    value: -4,
+    humidity: 65,
+    pressure: 892
+  },
+  "Urubici,BR": {
+    title: 'Urubici, BR',
+    value: 19,
+    humidity: 75,
+    pressure: 892
+  },
+  "Nairobi,KE": {
+    title: 'Nairobi, KE',
+    value: 31,
+    humidity: 71,
+    pressure: 892
+  },
+}
 
 class App extends Component {
   render() {
     return (
       <Layout>
-        <CardGrid>
-          <CityCard title="Nuuk, GL" value={-4} />
-          <CityCard title="Urubici, BR" value={19} type="main" />
-          <CityCard title="Nairobi, KE" value={31} />
-        </CardGrid>
+        <WeatherScreen cities={cities} />
       </Layout>
     );
   }
