@@ -1,13 +1,25 @@
 .CityCardContent-container {
-    margin-top: 20px;
+    margin-top: 10px;
     flex-direction: row;
     justify-content: center;
     align-self: center;
 }
 
+.CityCardContent-hot {
+    color: #ed1946;
+}
+
+.CityCardContent-normal {
+    color: #ff9632;
+}
+
+.CityCardContent-cold {
+    color: #69a3ff;
+}
+
 .CityCardContent-value {
     justify-content: flex-start;
-    font-size: 5.5em;
+    font-size: 5.7em;
 }
 
 .CityCardContent-unity {
