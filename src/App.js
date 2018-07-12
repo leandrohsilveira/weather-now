@@ -8,9 +8,9 @@ class App extends Component {
     return (
       <Layout>
         <CardGrid>
-          <CityCard title="Nuuk, GL" />
-          <CityCard title="Urubici, BR" type="main" />
-          <CityCard title="Nairobi, KE" />
+          <CityCard title="Nuuk, GL" value={-4} />
+          <CityCard title="Urubici, BR" value={19} type="main" />
+          <CityCard title="Nairobi, KE" value={31} />
         </CardGrid>
       </Layout>
     );

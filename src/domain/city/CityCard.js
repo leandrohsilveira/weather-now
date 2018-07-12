@@ -1,15 +1,15 @@
 import React from 'react';
 import Card from './../../components/card/Card';
 
-import './CityCard.css';
+import CityCardContent from './CityCardContent';
 import CityCardFooter from './CityCardFooter';
 
-const CityCard = ({title, type = 'alt'}) => (
+import './CityCard.css';
+
+const CityCard = ({title, value, unity, type = 'alt'}) => (
     <Card title={title} className={`CityCard-card CityCard-${type}`}>
         <div className={`CityCard-container flex`}>
-            <div className="CityCard-content flex">
-
-            </div>
+            <CityCardContent value={value} unity={unity} />
             <CityCardFooter type={type} />
         </div>
     </Card>
