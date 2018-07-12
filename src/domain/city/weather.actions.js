@@ -2,6 +2,7 @@
 const ACTION = {
     RESTORE: 'app.weather.restore',
     FETCH: 'app.weather.fetch',
+    FETCH_FAILED: 'app.weather.fetchFailed',
     STORE: 'app.weather.store'
 };
 
@@ -15,6 +16,14 @@ export const fetchCityWeather = (cityRef) => ({
     type: ACTION.FETCH,
     payload: {
         cityRef
+    }
+});
+
+export const fetchCityFailed = (cityRef, error) => ({
+    type: ACTION.FETCH_FAILED,
+    payload: {
+        cityRef,
+        error
     }
 });
 
