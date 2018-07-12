@@ -13,21 +13,13 @@ const WeatherScreen = (Comp => {
             cities: []
         };
 
+        componentWillMount() {
+            this.handlePropsChange(this.props);
+        }
+
         componentWillReceiveProps(nextProps) {
             if(nextProps.cities !== this.props.cities) {
-                if(nextProps.cities) {
-                    this.setState({
-                        cities: Object.keys(nextProps.cities).map(cityRef => {
-                            const city = nextProps[cityRef];
-                            return {
-                                key: cityRef,
-                                ...city
-                            };
-                        })
-                    });
-                } else {
-                    this.setState({cities: []});
-                }
+                this.handlePropsChange(nextProps);
             }
         }
 
@@ -42,6 +34,22 @@ const WeatherScreen = (Comp => {
                     ))}
                 </CardGrid>
             )
+        }
+
+        handlePropsChange = (nextProps) => {
+            if(nextProps.cities) {
+                this.setState({
+                    cities: Object.keys(nextProps.cities).map(cityRef => {
+                        const city = nextProps.cities[cityRef];
+                        return {
+                            key: cityRef,
+                            ...city
+                        };
+                    })
+                });
+            } else {
+                this.setState({cities: []});
+            }
         }
 
     }
