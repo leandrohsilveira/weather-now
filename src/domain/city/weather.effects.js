@@ -1,4 +1,4 @@
-import ACTION, { storeCityWeather, fetchCityWeather, fetchCityFailed } from './weather.actions';
+import ACTION, { storeCityWeather, fetchCityWeather, fetchCityFailed, restoreCityWeather } from './weather.actions';
 import { Cmd } from 'redux-loop';
 import moment from 'moment';
 import weatherService from './weather.service';
@@ -9,6 +9,8 @@ const weatherEffects = (state, action) => {
     switch(action.type) {
         case ACTION.RESTORE:
             return restoreEffect(state);
+        case ACTION.RESTORE_CITY:
+            return restoreCityEffect(state, payload.cityRef);
         case ACTION.FETCH:
             return fetchEffect(payload.cityRef);
         case ACTION.FETCH_FAILED:
@@ -23,20 +25,24 @@ const weatherEffects = (state, action) => {
 export default weatherEffects;
 
 const restoreEffect = (state) => {
-    return Cmd.list(Object.keys(state).map(cityRef => {
-        const local = window.localStorage.getItem(`app.store.weather.${cityRef}`);
-        if(local) {
-            const city = JSON.parse(local);
-            if(moment(city.date).add(10, 'minutes').isAfter()) {
-                if(!state[cityRef].date) {
-                    return Cmd.action(storeCityWeather(cityRef, city, false));
-                } else {
-                    return Cmd.none;
-                }
+    return Cmd.list(Object.keys(state).map(cityRef => (
+        Cmd.action(restoreCityWeather(cityRef))
+    )));
+};
+
+const restoreCityEffect = (state, cityRef) => {
+    const local = window.localStorage.getItem(`app.store.weather.${cityRef}`);
+    if(local) {
+        const city = JSON.parse(local);
+        if(moment(city.date).add(10, 'minutes').isAfter()) {
+            if(!state[cityRef].date) {
+                return Cmd.action(storeCityWeather(cityRef, city, false));
+            } else {
+                return Cmd.none;
             }
         }
-        return Cmd.action(fetchCityWeather(cityRef));
-    }));
+    }
+    return Cmd.action(fetchCityWeather(cityRef));
 };
 
 const fetchEffect = (cityRef) => {
