@@ -1,4 +1,4 @@
-import ACTION, { storeCityWeather, fetchCityWeather } from './weather.actions';
+import ACTION, { storeCityWeather, fetchCityWeather, fetchCityFailed } from './weather.actions';
 import { Cmd } from 'redux-loop';
 import weatherService from './weather.service';
 
@@ -10,6 +10,8 @@ const weatherEffects = (state, action) => {
             return restoreEffect(state);
         case ACTION.FETCH:
             return fetchEffect(payload.cityRef);
+        case ACTION.FETCH_FAILED:
+            return fetchFailedEffect(payload);
         case ACTION.STORE:
             return storeEffect(payload);
         default:
@@ -35,10 +37,16 @@ const fetchEffect = (cityRef) => {
         weatherService.fetch,
         {
             args: [cityRef],
-            successActionCreator: (city) => storeCityWeather(cityRef, city, true)
+            successActionCreator: (city) => storeCityWeather(cityRef, city, true),
+            failActionCreator: (error) => fetchCityFailed(cityRef, error)
         }
     );
 };
+
+const fetchFailedEffect = ({cityRef, error}) => {
+    console.warn('Unable to fetch weather of city', cityRef, error);
+    return null;
+}
 
 const storeEffect = ({cityRef, city, persist}) => {
     if(persist && city && cityRef) {
