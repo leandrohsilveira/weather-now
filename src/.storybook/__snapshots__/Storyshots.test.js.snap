@@ -406,7 +406,7 @@ exports[`Storyshots CityCard when the main card weather value is loading 1`] = `
     >
       <img
         alt="Loading"
-        className="Loading-img"
+        className="Loading-img flex"
         src="loading.svg"
       />
     </div>
@@ -563,7 +563,7 @@ exports[`Storyshots CityCard when the weather value is loading 1`] = `
     >
       <img
         alt="Loading"
-        className="Loading-img"
+        className="Loading-img flex"
         src="loading.svg"
       />
     </div>
