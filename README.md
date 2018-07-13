@@ -15,7 +15,7 @@ The app was built using the following technologies:
 
 ## 1 Quick start guide
 
-As it is a NodeJS app, to get started you will need to get NodeJS installed [here](https://nodejs.org/en/).
+As it is a NodeJS app, to get started you will need to install NodeJS [here](https://nodejs.org/en/).
 
 - Open a terminal console and navigate to a folder of your choice to place the project's source code;
 - Clone repository: `git clone https://github.com/leandrohsilveira/weather-now.git`;
