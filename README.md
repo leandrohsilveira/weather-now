@@ -13,9 +13,9 @@ The app was built using the following technologies:
 - [React redux integration](https://redux.js.org/basics/usage-with-react): 5.0.7;
 - [Redux loop middleware](https://redux-loop.js.org/): 4.3.3;
 
-## 1. Quick start guide
+## 1 Quick start guide
 
-As it is a NodeJS app, to get started you'll need to get NodeJS installed [here](https://nodejs.org/en/).
+As it is a NodeJS app, to get started you will need to get NodeJS installed [here](https://nodejs.org/en/).
 
 - Open a terminal console and navigate to a folder of your choice to place the project's source code;
 - Clone repository: `git clone https://github.com/leandrohsilveira/weather-now.git`;
@@ -36,4 +36,90 @@ All stories are placed in `./src/.storybook/stories` with files named `Component
 
 ### 1.3 Tests
 
+The Create React App also encapsulates [JestJS](https://jestjs.io/) configuration. To start Jest's CLI, just run `npm test` on terminal console.
 
+To create a new test suite, just create an file with name ending with `.test.js` inside `./src` folder.
+
+As the `Storybook.test.js` is a snapshot testing, any changes made to any component covered by the storybook may break this test suite. When it happens, you need to run the Storybook Server and see if the failing stories components rendering is correct. Then run tests again and press `u` to update the components snapshots with the changes made.
+
+## 2 Documentation
+
+### 2.1 Project structure
+
+- **node_modules**: the dependencies folder.
+- **public**: the output of the development server.
+- **src**: source root folder.
+    - .**storybook**: The Storybook stories and configurations folder.
+    - **components**: Commonly shared components.
+    - **config**: App dependencies configurations.
+    - **domain**: App domain components.
+        - **city**: City weather domain.
+    - **layout**: App layout composition components.
+
+### 2.2 Weather data load workflow
+
+#### Redux
+
+The Redux is an implementation of the [Flux pattern](https://facebook.github.io/flux) developed by Facebook to provide the most decoupled way of making two or more components communicate when they are far from each other in DOM tree.
+
+#### Redux-loop
+
+All state is handled by cycles of `action > reducer > sideEffects`.
+- The `action` are dispatched by connected components and call all reducers.
+- The `reducer` reduce an action to a change in the store state.
+- The `sideEffects` schedules tasks and actions as side effects to be executed after the store change lifecycle is complete. An side effect may dispatch other actions or execute tasks such async web services calls that dispatch actions on it's callbacks.
+
+#### The Weather Store
+
+*./src/domain/city/weather.reducer.js*
+```json
+{
+    "Nuuk,gl": {
+        "title": "Nuuk, GL",
+        "loading": false
+    },
+    "Urubici,br": {
+        "type": "main",
+        "title": "Urubici, BR",
+        "loading": false
+    },
+    "Nairobi,ke": {
+        "title": "Nairobi, KE",
+        "loading": false
+    }
+}
+```
+
+#### The workflow
+
+The WeatherScreen component is responsible for communication with Redux to retrieve all weather data to the CityCards components render them.
+
+The WeatherScreen is connected to the entire **Weather Store**, mapped to `cities` property, with `restoreWeather` and `restoreCityWeather` actions creators, injected to `restoreAll` and `restore` properties.
+
+1. **WeatherScreen** > componentWillMount:
+    - immediately calls the `restoreAll` and set an interval to repeat it.
+2. **weather.actions** > restoreWeather:
+    - action with type `app.weather.restoreWeather`.
+3. **weather.effects** > restoreEffect:
+    - schedule a list of actions to be triggered by redux-loop after the store change complete.
+4. **weather.actions** > restoreCityWeather:
+    - Each action is a `restoreCityWeather` action creator for each city in the store.
+    - All actions for each city is running at the same time.
+5. **weather.effects** > restoreCityEffect:
+    - Assuming that it is the first time call, it will schedule a `fetchCityWeather` action.
+6. **weather.actions** > fetchCityWeather:
+    - action with type `app.weather.fetchCityWeather`.
+7. weather.reducer:
+    - changes the payload city loading state to TRUE.
+8. **weather.effects** > fetchEffect:
+    - schedule an async task to be executed after store change is completed. 
+    - if the task completes, the `storeCityWeather` action is dispatched with the data.
+    - if the task fails, the `fetchCityFailed` action is dispatched with the error data.
+9. **weather.service** > fetch:
+    - a Web Service request to fetch the weather data of the city.
+10. **weather.actions** > storeCityWeather:
+    - action with type `app.weather.fetchCityWeather`.
+11. **weather.reducer**:
+    - changes the store city data, and also changes the it's loading flag to FALSE.
+12. **weather.effects** > storeEffect:
+    - stores the city weather data to `window.localStorage`.
