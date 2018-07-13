@@ -28,7 +28,7 @@ This is the quicker way to start interacting with the application. The project w
 
 ### 1.2 Components Storybook
 
-The [Storybook](https://storybook.js.org) is the best way to develop components ensuring it's isolation. That combined with [StoryShots addon](https://github.com/storybooks/storybook/tree/master/addons/storyshots/storyshots-core) provides also an Snapshot Test Suite to test the rendered output tree of the Components.
+The [Storybook](https://storybook.js.org) is the best way to develop components ensuring it's isolation. That combined with [StoryShots addon](https://github.com/storybooks/storybook/tree/master/addons/storyshots/storyshots-core) provides also a Snapshot Test Suite to test the rendered output tree of the Components.
 
 To start Storybook server, run `npm run storybook` on terminal console.
 
@@ -38,9 +38,9 @@ All stories are placed in `./src/.storybook/stories` with files named `Component
 
 The Create React App also encapsulates [JestJS](https://jestjs.io/) configuration. To start Jest's CLI, just run `npm test` on terminal console.
 
-To create a new test suite, just create an file with name ending with `.test.js` inside `./src` folder.
+To create a new test suite, just create an file with name ending with `.test.js` anywhere inside `./src` folder.
 
-As the `Storybook.test.js` is a snapshot testing, any changes made to any component covered by the storybook may break this test suite. When it happens, you need to run the Storybook Server and see if the failing stories components rendering is correct. Then run tests again and press `u` to update the components snapshots with the changes made.
+As the `Storybook.test.js` is a snapshot testing, any changes made to any component covered by the storybook may break this test suite. When it happens, you need to run the Storybook Server and see if the failing stories components are rendering correctly. If they are, then run tests again and press `u` to update the components snapshots with the changes made.
 
 ## 2 Documentation
 
@@ -64,7 +64,7 @@ The Redux is an implementation of the [Flux pattern](https://facebook.github.io/
 
 #### Redux-loop
 
-All state is handled by cycles of `action > reducer > sideEffects`.
+With Redux-loop middleware, all state is handled by cycles of `action > reducer > sideEffects`.
 - The `action` are dispatched by connected components and call all reducers.
 - The `reducer` reduce an action to a change in the store state.
 - The `sideEffects` schedules tasks and actions as side effects to be executed after the store change lifecycle is complete. An side effect may dispatch other actions or execute tasks such async web services calls that dispatch actions on it's callbacks.
@@ -104,12 +104,12 @@ The WeatherScreen is connected to the entire **Weather Store**, mapped to `citie
     - schedule a list of actions to be triggered by redux-loop after the store change complete.
 4. **weather.actions** > restoreCityWeather:
     - Each action is a `restoreCityWeather` action creator for each city in the store.
-    - All actions for each city is running at the same time.
+    - All actions for each city are running at the same time.
 5. **weather.effects** > restoreCityEffect:
     - Assuming that it is the first time call, it will schedule a `fetchCityWeather` action.
 6. **weather.actions** > fetchCityWeather:
     - action with type `app.weather.fetchCityWeather`.
-7. weather.reducer:
+7. **weather.reducer**:
     - changes the payload city loading state to TRUE.
 8. **weather.effects** > fetchEffect:
     - schedule an async task to be executed after store change is completed. 
