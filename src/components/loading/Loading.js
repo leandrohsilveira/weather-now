@@ -2,12 +2,13 @@ import React from 'react';
 
 import Grid from '../grid/Grid';
 import image from './loading.svg';
+import './Loading.css';
 
 const Loading = ({loading, children}) => {
     if(loading) {
         return (
             <Grid direction="column" justifyContent="center">
-                <img className="Loading-img" src={image} alt="Loading"/>
+                <img className="Loading-img flex" src={image} alt="Loading"/>
             </Grid>
         );
     }
