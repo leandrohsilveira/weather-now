@@ -10,7 +10,7 @@ const CityCardPropDisplay = ({label, value, unity}) => (
         <Grid className="CityCardPropDisplay-label" direction="row" justifyContent="center">
             {label}
         </Grid>
-        <Grid direction="row" justifyContent="center">
+        <Grid className="CityCardPropDisplay-description" direction="row" justifyContent="center">
             <span className="CityCardPropDisplay-value">{numeral(value).format('0')}</span>
             <span className="CityCardPropDisplay-unity">{unity}</span>
         </Grid>
