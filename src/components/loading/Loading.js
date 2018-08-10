@@ -1,14 +1,18 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import Grid from '../grid/Grid';
 import image from './loading.svg';
-import './Loading.css';
+
+const Image = styled.img`
+    align-self: center;
+`
 
 const Loading = ({loading, children}) => {
     if(loading) {
         return (
             <Grid direction="column" justifyContent="center">
-                <img className="Loading-img flex" src={image} alt="Loading"/>
+                <Image className="flex" src={image} alt="Loading"/>
             </Grid>
         );
     }
