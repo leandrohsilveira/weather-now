@@ -1,21 +1,42 @@
 import React from 'react';
 import numeral from 'numeral';
+import styled from 'styled-components';
 
-import './CityCardContent.css';
+const Container = styled.div`
+    margin-top: 10px;
+    flex-direction: row;
+    justify-content: center;
+    align-self: center;
+`
 
-const CityCardContent = ({value, unity = '°'}) => {
-    let weather = 'normal';
-    if(value > 25) {
-        weather = 'hot';
-    } else if(value <= 5) {
-        weather = 'cold';
-    }
-    return (
-        <div className="CityCardContent-container flex">
-            <span className={`CityCardContent-value CityCardContent-${weather} flex`}>{numeral(value).format('0')}</span>
-            <span className={`CityCardContent-unity CityCardContent-${weather} flex`}>{unity}</span>
-        </div>
-    );
-};
+const Color = styled.span`
+    color: ${({ value }) => {
+        if (value > 25) {
+            return '#ed1946';
+        } else if (value <= 5) {
+            return '#69a3ff';
+        } else {
+            return '#ff9632';
+        }
+    }};
+`
+
+const Value = styled(Color)`
+    justify-content: flex-start;
+    font-size: 5.7em;
+`
+
+const Unit = styled(Color)`
+    padding-top: 13px;
+    justify-content: flex-start;
+    font-size: 3em;
+`
+
+const CityCardContent = ({ value, unity = '°' }) => (
+    <Container className="flex">
+        <Value className="flex" value={value}>{numeral(value).format('0')}</Value>
+        <Unit className="flex" value={value}>{unity}</Unit>
+    </Container>
+);
 
 export default CityCardContent;
