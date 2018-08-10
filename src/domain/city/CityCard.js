@@ -1,4 +1,6 @@
 import React from 'react';
+import styled from 'styled-components';
+
 import Card from './../../components/card/Card';
 import Loading from './../../components/loading/Loading';
 
@@ -6,7 +8,6 @@ import CityCardContent from './CityCardContent';
 import CityCardFooter from './CityCardFooter';
 import CityCardError from './CityCardError';
 
-import styled from 'styled-components';
 
 const Root = styled(Card)`
 
