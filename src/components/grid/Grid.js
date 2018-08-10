@@ -1,18 +1,22 @@
 import React from 'react';
+import styled, { css } from 'styled-components';
 
-import './Grid.css';
+const Root = styled.div`
+    ${({
+        flex = 1,
+        direction = 'unset',
+        justifyContent = 'unset',
+        alignSelf = 'unset',
+    }) => css`
 
-const Grid = ({
-    children, 
-    className = 'Grid-default',
-    direction = 'unset', 
-    justifyContent = 'unset', 
-    alignSelf = 'unset',
-    Root = 'div'
-}) => (
-    <Root className={`${className} flex Grid-fd-${direction} Grid-fjc-${justifyContent} Grid-fas-${alignSelf}`}>
-        {children}
-    </Root>
-);
+        flex: ${flex};
+        flex-direction: ${direction};
+        justify-content: ${justifyContent};
+        align-self: ${alignSelf};
+
+    `}
+`
+
+export const Grid = props => <Root className="flex" {...props} />;
 
 export default Grid;
