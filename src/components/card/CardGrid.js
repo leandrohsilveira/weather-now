@@ -1,11 +1,19 @@
 import React from 'react';
 
-import './CardGrid.css';
+import styled from 'styled-components';
+
+const Section = styled.section`
+    flex-direction: row;
+    justify-content: center;
+    @media screen and (max-width: 599px) {
+        flex-direction: column;
+    }
+`
 
 const CardGrid = ({children}) => (
-    <section className="CardGrid-section flex">
+    <Section className="flex">
         {children}
-    </section>
+    </Section>
 );
 
 export default CardGrid;
