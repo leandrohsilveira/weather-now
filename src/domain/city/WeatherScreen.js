@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 
 import CardGrid from './../../components/card/CardGrid';
 import CityCard from './CityCard';
-import { restoreWeather, restoreCityWeather } from './weather.actions';
+import { restoreWeather, restoreCityWeather, getWeatherState } from './weatherModule';
 
 const mapStateToProps = state => ({
-    cities: state.weather
+    cities: getWeatherState(state)
 });
 
 const mapDispatchToProps = dispatch => ({
