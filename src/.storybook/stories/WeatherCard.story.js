@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import moment from 'moment';
 
 import '../../index.css';
-import WeatherCard from '../../domain/city/WeatherCard';
+import WeatherCard from '../../domain/weather/WeatherCard';
 
 const date = moment('10:51 PM', 'LT').toDate();
 
