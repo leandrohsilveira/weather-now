@@ -14,7 +14,7 @@ const CityCardFooter = ({ type = 'alt', date, humidity, pressure }) => (
             </Grid>
         )}
         <Grid className="CityCardFooter-row-bottom" direction="row" justifyContent="center">
-            <span className={`CityCardFooter-updated ${type}`}>Updated at {moment(date).format(('LT'))}</span>
+            <span className={`CityCardFooter-updated ${type}`}>Updated at {moment(date).format(('LTS'))}</span>
         </Grid>
     </div>
 );

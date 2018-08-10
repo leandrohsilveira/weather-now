@@ -148,7 +148,7 @@ exports[`Storyshots CityCard when the main card weather is cold 1`] = `
             Humidity
           </div>
           <div
-            className="Grid-default flex Grid-fd-row Grid-fjc-center Grid-fas-unset"
+            className="CityCardPropDisplay-description flex Grid-fd-row Grid-fjc-center Grid-fas-unset"
           >
             <span
               className="CityCardPropDisplay-value"
@@ -171,7 +171,7 @@ exports[`Storyshots CityCard when the main card weather is cold 1`] = `
             Pressure
           </div>
           <div
-            className="Grid-default flex Grid-fd-row Grid-fjc-center Grid-fas-unset"
+            className="CityCardPropDisplay-description flex Grid-fd-row Grid-fjc-center Grid-fas-unset"
           >
             <span
               className="CityCardPropDisplay-value"
@@ -193,7 +193,7 @@ exports[`Storyshots CityCard when the main card weather is cold 1`] = `
           className="CityCardFooter-updated main"
         >
           Updated at 
-          10:51 PM
+          10:51:00 PM
         </span>
       </div>
     </div>
@@ -242,7 +242,7 @@ exports[`Storyshots CityCard when the main card weather is hot 1`] = `
             Humidity
           </div>
           <div
-            className="Grid-default flex Grid-fd-row Grid-fjc-center Grid-fas-unset"
+            className="CityCardPropDisplay-description flex Grid-fd-row Grid-fjc-center Grid-fas-unset"
           >
             <span
               className="CityCardPropDisplay-value"
@@ -265,7 +265,7 @@ exports[`Storyshots CityCard when the main card weather is hot 1`] = `
             Pressure
           </div>
           <div
-            className="Grid-default flex Grid-fd-row Grid-fjc-center Grid-fas-unset"
+            className="CityCardPropDisplay-description flex Grid-fd-row Grid-fjc-center Grid-fas-unset"
           >
             <span
               className="CityCardPropDisplay-value"
@@ -287,7 +287,7 @@ exports[`Storyshots CityCard when the main card weather is hot 1`] = `
           className="CityCardFooter-updated main"
         >
           Updated at 
-          10:51 PM
+          10:51:00 PM
         </span>
       </div>
     </div>
@@ -336,7 +336,7 @@ exports[`Storyshots CityCard when the main card weather is normal 1`] = `
             Humidity
           </div>
           <div
-            className="Grid-default flex Grid-fd-row Grid-fjc-center Grid-fas-unset"
+            className="CityCardPropDisplay-description flex Grid-fd-row Grid-fjc-center Grid-fas-unset"
           >
             <span
               className="CityCardPropDisplay-value"
@@ -359,7 +359,7 @@ exports[`Storyshots CityCard when the main card weather is normal 1`] = `
             Pressure
           </div>
           <div
-            className="Grid-default flex Grid-fd-row Grid-fjc-center Grid-fas-unset"
+            className="CityCardPropDisplay-description flex Grid-fd-row Grid-fjc-center Grid-fas-unset"
           >
             <span
               className="CityCardPropDisplay-value"
@@ -381,7 +381,7 @@ exports[`Storyshots CityCard when the main card weather is normal 1`] = `
           className="CityCardFooter-updated main"
         >
           Updated at 
-          10:51 PM
+          10:51:00 PM
         </span>
       </div>
     </div>
@@ -406,7 +406,7 @@ exports[`Storyshots CityCard when the main card weather value is loading 1`] = `
     >
       <img
         alt="Loading"
-        className="Loading-img"
+        className="Loading-img flex"
         src="loading.svg"
       />
     </div>
@@ -450,7 +450,7 @@ exports[`Storyshots CityCard when the weather is cold 1`] = `
           className="CityCardFooter-updated alt"
         >
           Updated at 
-          10:51 PM
+          10:51:00 PM
         </span>
       </div>
     </div>
@@ -494,7 +494,7 @@ exports[`Storyshots CityCard when the weather is hot 1`] = `
           className="CityCardFooter-updated alt"
         >
           Updated at 
-          10:51 PM
+          10:51:00 PM
         </span>
       </div>
     </div>
@@ -538,7 +538,7 @@ exports[`Storyshots CityCard when the weather is normal 1`] = `
           className="CityCardFooter-updated alt"
         >
           Updated at 
-          10:51 PM
+          10:51:00 PM
         </span>
       </div>
     </div>
@@ -563,7 +563,7 @@ exports[`Storyshots CityCard when the weather value is loading 1`] = `
     >
       <img
         alt="Loading"
-        className="Loading-img"
+        className="Loading-img flex"
         src="loading.svg"
       />
     </div>
