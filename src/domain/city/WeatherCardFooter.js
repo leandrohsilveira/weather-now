@@ -3,7 +3,7 @@ import moment from 'moment';
 import styled, { css } from 'styled-components';
 
 import Grid from './../../components/grid/Grid';
-import CityCardPropDisplay from './CityCardPropDisplay';
+import WeatherCardPropDisplay from './WeatherCardPropDisplay';
 
 const Container = styled.div`
     flex-direction: column;
@@ -22,12 +22,12 @@ const Updated = styled.span`
 
 `
 
-const CityCardFooter = ({ type = 'alt', date, humidity, pressure }) => (
+const WeatherCardFooter = ({ type = 'alt', date, humidity, pressure }) => (
     <Container className="flex" type={type}>
         {type === 'main' && (
             <Grid flex={6} direction="row" justifyContent="space-around">
-                <CityCardPropDisplay label="Humidity" value={humidity} unity="%" />
-                <CityCardPropDisplay label="Pressure" value={pressure} unity="hPa" />
+                <WeatherCardPropDisplay label="Humidity" value={humidity} unity="%" />
+                <WeatherCardPropDisplay label="Pressure" value={pressure} unity="hPa" />
             </Grid>
         )}
         <Grid flex={4} direction="row" justifyContent="center">
@@ -36,4 +36,4 @@ const CityCardFooter = ({ type = 'alt', date, humidity, pressure }) => (
     </Container>
 );
 
-export default CityCardFooter;
+export default WeatherCardFooter;

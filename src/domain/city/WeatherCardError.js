@@ -38,7 +38,7 @@ const Button = styled.button`
 
 `
 
-const CityCardError = ({error, onTryAgain, children}) => {
+const WeatherCardError = ({error, onTryAgain, children}) => {
     if(error) {
         return (
             <Grid direction="column" justifyContent="center">
@@ -52,4 +52,4 @@ const CityCardError = ({error, onTryAgain, children}) => {
     return children;
 };
 
-export default CityCardError;
+export default WeatherCardError;

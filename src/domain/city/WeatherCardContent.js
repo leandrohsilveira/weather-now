@@ -32,11 +32,11 @@ const Unit = styled(Color)`
     font-size: 3em;
 `
 
-const CityCardContent = ({ value, unity = '°' }) => (
+const WeatherCardContent = ({ value, unity = '°' }) => (
     <Container className="flex">
         <Value className="flex" value={value}>{numeral(value).format('0')}</Value>
         <Unit className="flex" value={value}>{unity}</Unit>
     </Container>
 );
 
-export default CityCardContent;
+export default WeatherCardContent;

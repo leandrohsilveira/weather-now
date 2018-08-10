@@ -4,9 +4,9 @@ import styled from 'styled-components';
 import Card from './../../components/card/Card';
 import Loading from './../../components/loading/Loading';
 
-import CityCardContent from './CityCardContent';
-import CityCardFooter from './CityCardFooter';
-import CityCardError from './CityCardError';
+import WeatherCardContent from './WeatherCardContent';
+import WeatherCardFooter from './WeatherCardFooter';
+import WeatherCardError from './WeatherCardError';
 
 
 const Root = styled(Card)`
@@ -24,7 +24,7 @@ const Container = styled.div`
     justify-content: space-between;
 `
 
-const CityCard = ({
+const WeatherCard = ({
     loading,
     date,
     title,
@@ -39,18 +39,18 @@ const CityCard = ({
         <Root title={title} type={type}>
             <Container className="flex">
                 <Loading loading={loading}>
-                    <CityCardError error={error} onTryAgain={onTryAgain}>
-                        <CityCardContent value={value} unity={unity} />
-                        <CityCardFooter
+                    <WeatherCardError error={error} onTryAgain={onTryAgain}>
+                        <WeatherCardContent value={value} unity={unity} />
+                        <WeatherCardFooter
                             date={date}
                             type={type}
                             humidity={humidity}
                             pressure={pressure}
                         />
-                    </CityCardError>
+                    </WeatherCardError>
                 </Loading>
             </Container>
         </Root>
     );
 
-export default CityCard;
+export default WeatherCard;

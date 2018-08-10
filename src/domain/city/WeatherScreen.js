@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import CardGrid from './../../components/card/CardGrid';
-import CityCard from './CityCard';
+import WeatherCard from './WeatherCard';
 import { restoreWeather, restoreCityWeather, getWeatherState } from './weatherModule';
 
 const mapStateToProps = state => ({
@@ -51,7 +51,7 @@ const WeatherScreen = (Comp => {
             return (
                 <CardGrid>
                     {cities.map(city => (
-                        <CityCard
+                        <WeatherCard
                             {...city}
                             onTryAgain={() => this.handleTryAgain(city.key)}
                         />

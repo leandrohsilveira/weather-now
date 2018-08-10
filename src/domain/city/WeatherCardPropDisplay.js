@@ -26,7 +26,7 @@ const Unit = styled.span`
     align-self: baseline;
 `
 
-const CityCardPropDisplay = ({label, value, unity}) => (
+const WeatherCardPropDisplay = ({label, value, unity}) => (
     <Grid direction="column" justifyContent="center" alignSelf="center">
         <Label direction="row" justifyContent="center">{label}</Label>
         <Grid direction="row" justifyContent="center">
@@ -36,4 +36,4 @@ const CityCardPropDisplay = ({label, value, unity}) => (
     </Grid>
 );
 
-export default CityCardPropDisplay;
+export default WeatherCardPropDisplay;
