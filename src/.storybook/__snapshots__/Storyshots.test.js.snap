@@ -2,7 +2,7 @@
 
 exports[`Storyshots Card when has a content 1`] = `
 <article
-  className="Card-container flex undefined"
+  className="flex undefined sc-bdVaJa bZmLVk"
 >
   <div>
     The card's content
@@ -12,10 +12,10 @@ exports[`Storyshots Card when has a content 1`] = `
 
 exports[`Storyshots Card when has a title 1`] = `
 <article
-  className="Card-container flex undefined"
+  className="flex undefined sc-bdVaJa bZmLVk"
 >
   <h3
-    className="Card-title flex"
+    className="flex sc-bwzfXH lkZqCK"
   >
     City, CC
   </h3>
@@ -24,10 +24,10 @@ exports[`Storyshots Card when has a title 1`] = `
 
 exports[`Storyshots Card when has both title and content 1`] = `
 <article
-  className="Card-container flex undefined"
+  className="flex undefined sc-bdVaJa bZmLVk"
 >
   <h3
-    className="Card-title flex"
+    className="flex sc-bwzfXH lkZqCK"
   >
     City, CC
   </h3>
@@ -39,32 +39,33 @@ exports[`Storyshots Card when has both title and content 1`] = `
 
 exports[`Storyshots Card when is completely empty 1`] = `
 <article
-  className="Card-container flex undefined"
+  className="flex undefined sc-bdVaJa bZmLVk"
 />
 `;
 
-exports[`Storyshots CityCard when something went wrong 1`] = `
+exports[`Storyshots WeatherCard when something went wrong 1`] = `
 <article
-  className="Card-container flex CityCard-card CityCard-alt"
+  className="flex sc-fjdhpX ewbmre sc-bdVaJa bZmLVk"
 >
   <h3
-    className="Card-title flex"
+    className="flex sc-bwzfXH lkZqCK"
   >
     City, CC
   </h3>
   <div
-    className="CityCard-container flex"
+    className="flex sc-jzJRlG bJGuIR"
   >
     <div
-      className="Grid-default flex Grid-fd-column Grid-fjc-center Grid-fas-unset"
+      className="flex sc-htpNat hLwoui"
+      direction="column"
     >
       <div
-        className="CityCardError-message flex"
+        className="flex sc-VigVT hsCCzl"
       >
         Something went wrong
       </div>
       <button
-        className="CityCardError-button flex"
+        className="flex sc-jTzLTM gbXKAY"
         onClick={[Function]}
         type="button"
       >
@@ -75,28 +76,29 @@ exports[`Storyshots CityCard when something went wrong 1`] = `
 </article>
 `;
 
-exports[`Storyshots CityCard when something went wrong with the main card 1`] = `
+exports[`Storyshots WeatherCard when something went wrong with the main card 1`] = `
 <article
-  className="Card-container flex CityCard-card CityCard-main"
+  className="flex sc-fjdhpX lbOYeQ sc-bdVaJa bZmLVk"
 >
   <h3
-    className="Card-title flex"
+    className="flex sc-bwzfXH lkZqCK"
   >
     City, CC
   </h3>
   <div
-    className="CityCard-container flex"
+    className="flex sc-jzJRlG bJGuIR"
   >
     <div
-      className="Grid-default flex Grid-fd-column Grid-fjc-center Grid-fas-unset"
+      className="flex sc-htpNat hLwoui"
+      direction="column"
     >
       <div
-        className="CityCardError-message flex"
+        className="flex sc-VigVT hsCCzl"
       >
         Something went wrong
       </div>
       <button
-        className="CityCardError-button flex"
+        className="flex sc-jTzLTM gbXKAY"
         onClick={[Function]}
         type="button"
       >
@@ -107,79 +109,89 @@ exports[`Storyshots CityCard when something went wrong with the main card 1`] = 
 </article>
 `;
 
-exports[`Storyshots CityCard when the main card weather is cold 1`] = `
+exports[`Storyshots WeatherCard when the main card weather is cold 1`] = `
 <article
-  className="Card-container flex CityCard-card CityCard-main"
+  className="flex sc-fjdhpX lbOYeQ sc-bdVaJa bZmLVk"
 >
   <h3
-    className="Card-title flex"
+    className="flex sc-bwzfXH lkZqCK"
   >
     City, CC
   </h3>
   <div
-    className="CityCard-container flex"
+    className="flex sc-jzJRlG bJGuIR"
   >
     <div
-      className="CityCardContent-container flex"
+      className="flex sc-ifAKCX qHQFp"
     >
       <span
-        className="CityCardContent-value CityCardContent-cold flex"
+        className="flex sc-bZQynM cZXHjN sc-EHOje fwffcz"
+        value={3}
       >
         3
       </span>
       <span
-        className="CityCardContent-unity CityCardContent-cold flex"
+        className="flex sc-gzVnrw eGXRWR sc-EHOje fwffcz"
+        value={3}
       >
         °
       </span>
     </div>
     <div
-      className="CityCardFooter-container CityCardFooter-main flex"
+      className="flex sc-gZMcBi hAITDv"
+      type="main"
     >
       <div
-        className="CityCardFooter-row-top flex Grid-fd-row Grid-fjc-space-around Grid-fas-unset"
+        className="flex sc-htpNat gcsSGe"
+        direction="row"
       >
         <div
-          className="Grid-default flex Grid-fd-column Grid-fjc-center Grid-fas-center"
+          className="flex sc-htpNat cQEGwB"
+          direction="column"
         >
           <div
-            className="CityCardPropDisplay-label flex Grid-fd-row Grid-fjc-center Grid-fas-unset"
+            className="sc-htoDjs koBdvF sc-htpNat WNImK"
+            direction="row"
           >
             Humidity
           </div>
           <div
-            className="CityCardPropDisplay-description flex Grid-fd-row Grid-fjc-center Grid-fas-unset"
+            className="flex sc-htpNat WNImK"
+            direction="row"
           >
             <span
-              className="CityCardPropDisplay-value"
+              className="sc-dnqmqq cvjfGs"
             >
               84
             </span>
             <span
-              className="CityCardPropDisplay-unity"
+              className="sc-iwsKbI bkIwlD"
             >
               %
             </span>
           </div>
         </div>
         <div
-          className="Grid-default flex Grid-fd-column Grid-fjc-center Grid-fas-center"
+          className="flex sc-htpNat cQEGwB"
+          direction="column"
         >
           <div
-            className="CityCardPropDisplay-label flex Grid-fd-row Grid-fjc-center Grid-fas-unset"
+            className="sc-htoDjs koBdvF sc-htpNat WNImK"
+            direction="row"
           >
             Pressure
           </div>
           <div
-            className="CityCardPropDisplay-description flex Grid-fd-row Grid-fjc-center Grid-fas-unset"
+            className="flex sc-htpNat WNImK"
+            direction="row"
           >
             <span
-              className="CityCardPropDisplay-value"
+              className="sc-dnqmqq cvjfGs"
             >
               955
             </span>
             <span
-              className="CityCardPropDisplay-unity"
+              className="sc-iwsKbI bkIwlD"
             >
               hPa
             </span>
@@ -187,10 +199,12 @@ exports[`Storyshots CityCard when the main card weather is cold 1`] = `
         </div>
       </div>
       <div
-        className="CityCardFooter-row-bottom flex Grid-fd-row Grid-fjc-center Grid-fas-unset"
+        className="flex sc-htpNat fYveYQ"
+        direction="row"
       >
         <span
-          className="CityCardFooter-updated main"
+          className="sc-gqjmRU ffOYjx"
+          type="main"
         >
           Updated at 
           10:51:00 PM
@@ -201,79 +215,89 @@ exports[`Storyshots CityCard when the main card weather is cold 1`] = `
 </article>
 `;
 
-exports[`Storyshots CityCard when the main card weather is hot 1`] = `
+exports[`Storyshots WeatherCard when the main card weather is hot 1`] = `
 <article
-  className="Card-container flex CityCard-card CityCard-main"
+  className="flex sc-fjdhpX lbOYeQ sc-bdVaJa bZmLVk"
 >
   <h3
-    className="Card-title flex"
+    className="flex sc-bwzfXH lkZqCK"
   >
     City, CC
   </h3>
   <div
-    className="CityCard-container flex"
+    className="flex sc-jzJRlG bJGuIR"
   >
     <div
-      className="CityCardContent-container flex"
+      className="flex sc-ifAKCX qHQFp"
     >
       <span
-        className="CityCardContent-value CityCardContent-hot flex"
+        className="flex sc-bZQynM cZXHjN sc-EHOje zXHDr"
+        value={30}
       >
         30
       </span>
       <span
-        className="CityCardContent-unity CityCardContent-hot flex"
+        className="flex sc-gzVnrw eGXRWR sc-EHOje zXHDr"
+        value={30}
       >
         °
       </span>
     </div>
     <div
-      className="CityCardFooter-container CityCardFooter-main flex"
+      className="flex sc-gZMcBi hAITDv"
+      type="main"
     >
       <div
-        className="CityCardFooter-row-top flex Grid-fd-row Grid-fjc-space-around Grid-fas-unset"
+        className="flex sc-htpNat gcsSGe"
+        direction="row"
       >
         <div
-          className="Grid-default flex Grid-fd-column Grid-fjc-center Grid-fas-center"
+          className="flex sc-htpNat cQEGwB"
+          direction="column"
         >
           <div
-            className="CityCardPropDisplay-label flex Grid-fd-row Grid-fjc-center Grid-fas-unset"
+            className="sc-htoDjs koBdvF sc-htpNat WNImK"
+            direction="row"
           >
             Humidity
           </div>
           <div
-            className="CityCardPropDisplay-description flex Grid-fd-row Grid-fjc-center Grid-fas-unset"
+            className="flex sc-htpNat WNImK"
+            direction="row"
           >
             <span
-              className="CityCardPropDisplay-value"
+              className="sc-dnqmqq cvjfGs"
             >
               67
             </span>
             <span
-              className="CityCardPropDisplay-unity"
+              className="sc-iwsKbI bkIwlD"
             >
               %
             </span>
           </div>
         </div>
         <div
-          className="Grid-default flex Grid-fd-column Grid-fjc-center Grid-fas-center"
+          className="flex sc-htpNat cQEGwB"
+          direction="column"
         >
           <div
-            className="CityCardPropDisplay-label flex Grid-fd-row Grid-fjc-center Grid-fas-unset"
+            className="sc-htoDjs koBdvF sc-htpNat WNImK"
+            direction="row"
           >
             Pressure
           </div>
           <div
-            className="CityCardPropDisplay-description flex Grid-fd-row Grid-fjc-center Grid-fas-unset"
+            className="flex sc-htpNat WNImK"
+            direction="row"
           >
             <span
-              className="CityCardPropDisplay-value"
+              className="sc-dnqmqq cvjfGs"
             >
               837
             </span>
             <span
-              className="CityCardPropDisplay-unity"
+              className="sc-iwsKbI bkIwlD"
             >
               hPa
             </span>
@@ -281,10 +305,12 @@ exports[`Storyshots CityCard when the main card weather is hot 1`] = `
         </div>
       </div>
       <div
-        className="CityCardFooter-row-bottom flex Grid-fd-row Grid-fjc-center Grid-fas-unset"
+        className="flex sc-htpNat fYveYQ"
+        direction="row"
       >
         <span
-          className="CityCardFooter-updated main"
+          className="sc-gqjmRU ffOYjx"
+          type="main"
         >
           Updated at 
           10:51:00 PM
@@ -295,79 +321,89 @@ exports[`Storyshots CityCard when the main card weather is hot 1`] = `
 </article>
 `;
 
-exports[`Storyshots CityCard when the main card weather is normal 1`] = `
+exports[`Storyshots WeatherCard when the main card weather is normal 1`] = `
 <article
-  className="Card-container flex CityCard-card CityCard-main"
+  className="flex sc-fjdhpX lbOYeQ sc-bdVaJa bZmLVk"
 >
   <h3
-    className="Card-title flex"
+    className="flex sc-bwzfXH lkZqCK"
   >
     City, CC
   </h3>
   <div
-    className="CityCard-container flex"
+    className="flex sc-jzJRlG bJGuIR"
   >
     <div
-      className="CityCardContent-container flex"
+      className="flex sc-ifAKCX qHQFp"
     >
       <span
-        className="CityCardContent-value CityCardContent-normal flex"
+        className="flex sc-bZQynM cZXHjN sc-EHOje jwUnvU"
+        value={20}
       >
         20
       </span>
       <span
-        className="CityCardContent-unity CityCardContent-normal flex"
+        className="flex sc-gzVnrw eGXRWR sc-EHOje jwUnvU"
+        value={20}
       >
         °
       </span>
     </div>
     <div
-      className="CityCardFooter-container CityCardFooter-main flex"
+      className="flex sc-gZMcBi hAITDv"
+      type="main"
     >
       <div
-        className="CityCardFooter-row-top flex Grid-fd-row Grid-fjc-space-around Grid-fas-unset"
+        className="flex sc-htpNat gcsSGe"
+        direction="row"
       >
         <div
-          className="Grid-default flex Grid-fd-column Grid-fjc-center Grid-fas-center"
+          className="flex sc-htpNat cQEGwB"
+          direction="column"
         >
           <div
-            className="CityCardPropDisplay-label flex Grid-fd-row Grid-fjc-center Grid-fas-unset"
+            className="sc-htoDjs koBdvF sc-htpNat WNImK"
+            direction="row"
           >
             Humidity
           </div>
           <div
-            className="CityCardPropDisplay-description flex Grid-fd-row Grid-fjc-center Grid-fas-unset"
+            className="flex sc-htpNat WNImK"
+            direction="row"
           >
             <span
-              className="CityCardPropDisplay-value"
+              className="sc-dnqmqq cvjfGs"
             >
               70
             </span>
             <span
-              className="CityCardPropDisplay-unity"
+              className="sc-iwsKbI bkIwlD"
             >
               %
             </span>
           </div>
         </div>
         <div
-          className="Grid-default flex Grid-fd-column Grid-fjc-center Grid-fas-center"
+          className="flex sc-htpNat cQEGwB"
+          direction="column"
         >
           <div
-            className="CityCardPropDisplay-label flex Grid-fd-row Grid-fjc-center Grid-fas-unset"
+            className="sc-htoDjs koBdvF sc-htpNat WNImK"
+            direction="row"
           >
             Pressure
           </div>
           <div
-            className="CityCardPropDisplay-description flex Grid-fd-row Grid-fjc-center Grid-fas-unset"
+            className="flex sc-htpNat WNImK"
+            direction="row"
           >
             <span
-              className="CityCardPropDisplay-value"
+              className="sc-dnqmqq cvjfGs"
             >
               890
             </span>
             <span
-              className="CityCardPropDisplay-unity"
+              className="sc-iwsKbI bkIwlD"
             >
               hPa
             </span>
@@ -375,10 +411,12 @@ exports[`Storyshots CityCard when the main card weather is normal 1`] = `
         </div>
       </div>
       <div
-        className="CityCardFooter-row-bottom flex Grid-fd-row Grid-fjc-center Grid-fas-unset"
+        className="flex sc-htpNat fYveYQ"
+        direction="row"
       >
         <span
-          className="CityCardFooter-updated main"
+          className="sc-gqjmRU ffOYjx"
+          type="main"
         >
           Updated at 
           10:51:00 PM
@@ -389,24 +427,25 @@ exports[`Storyshots CityCard when the main card weather is normal 1`] = `
 </article>
 `;
 
-exports[`Storyshots CityCard when the main card weather value is loading 1`] = `
+exports[`Storyshots WeatherCard when the main card weather value is loading 1`] = `
 <article
-  className="Card-container flex CityCard-card CityCard-main"
+  className="flex sc-fjdhpX lbOYeQ sc-bdVaJa bZmLVk"
 >
   <h3
-    className="Card-title flex"
+    className="flex sc-bwzfXH lkZqCK"
   >
     City, CC
   </h3>
   <div
-    className="CityCard-container flex"
+    className="flex sc-jzJRlG bJGuIR"
   >
     <div
-      className="Grid-default flex Grid-fd-column Grid-fjc-center Grid-fas-unset"
+      className="flex sc-htpNat hLwoui"
+      direction="column"
     >
       <img
         alt="Loading"
-        className="Loading-img flex"
+        className="flex sc-bxivhb gdnUgh"
         src="loading.svg"
       />
     </div>
@@ -414,40 +453,45 @@ exports[`Storyshots CityCard when the main card weather value is loading 1`] = `
 </article>
 `;
 
-exports[`Storyshots CityCard when the weather is cold 1`] = `
+exports[`Storyshots WeatherCard when the weather is cold 1`] = `
 <article
-  className="Card-container flex CityCard-card CityCard-alt"
+  className="flex sc-fjdhpX ewbmre sc-bdVaJa bZmLVk"
 >
   <h3
-    className="Card-title flex"
+    className="flex sc-bwzfXH lkZqCK"
   >
     City, CC
   </h3>
   <div
-    className="CityCard-container flex"
+    className="flex sc-jzJRlG bJGuIR"
   >
     <div
-      className="CityCardContent-container flex"
+      className="flex sc-ifAKCX qHQFp"
     >
       <span
-        className="CityCardContent-value CityCardContent-cold flex"
+        className="flex sc-bZQynM cZXHjN sc-EHOje fwffcz"
+        value={3}
       >
         3
       </span>
       <span
-        className="CityCardContent-unity CityCardContent-cold flex"
+        className="flex sc-gzVnrw eGXRWR sc-EHOje fwffcz"
+        value={3}
       >
         °
       </span>
     </div>
     <div
-      className="CityCardFooter-container CityCardFooter-alt flex"
+      className="flex sc-gZMcBi hlYHSO"
+      type="alt"
     >
       <div
-        className="CityCardFooter-row-bottom flex Grid-fd-row Grid-fjc-center Grid-fas-unset"
+        className="flex sc-htpNat fYveYQ"
+        direction="row"
       >
         <span
-          className="CityCardFooter-updated alt"
+          className="sc-gqjmRU eCALHE"
+          type="alt"
         >
           Updated at 
           10:51:00 PM
@@ -458,40 +502,45 @@ exports[`Storyshots CityCard when the weather is cold 1`] = `
 </article>
 `;
 
-exports[`Storyshots CityCard when the weather is hot 1`] = `
+exports[`Storyshots WeatherCard when the weather is hot 1`] = `
 <article
-  className="Card-container flex CityCard-card CityCard-alt"
+  className="flex sc-fjdhpX ewbmre sc-bdVaJa bZmLVk"
 >
   <h3
-    className="Card-title flex"
+    className="flex sc-bwzfXH lkZqCK"
   >
     City, CC
   </h3>
   <div
-    className="CityCard-container flex"
+    className="flex sc-jzJRlG bJGuIR"
   >
     <div
-      className="CityCardContent-container flex"
+      className="flex sc-ifAKCX qHQFp"
     >
       <span
-        className="CityCardContent-value CityCardContent-hot flex"
+        className="flex sc-bZQynM cZXHjN sc-EHOje zXHDr"
+        value={30}
       >
         30
       </span>
       <span
-        className="CityCardContent-unity CityCardContent-hot flex"
+        className="flex sc-gzVnrw eGXRWR sc-EHOje zXHDr"
+        value={30}
       >
         °
       </span>
     </div>
     <div
-      className="CityCardFooter-container CityCardFooter-alt flex"
+      className="flex sc-gZMcBi hlYHSO"
+      type="alt"
     >
       <div
-        className="CityCardFooter-row-bottom flex Grid-fd-row Grid-fjc-center Grid-fas-unset"
+        className="flex sc-htpNat fYveYQ"
+        direction="row"
       >
         <span
-          className="CityCardFooter-updated alt"
+          className="sc-gqjmRU eCALHE"
+          type="alt"
         >
           Updated at 
           10:51:00 PM
@@ -502,40 +551,45 @@ exports[`Storyshots CityCard when the weather is hot 1`] = `
 </article>
 `;
 
-exports[`Storyshots CityCard when the weather is normal 1`] = `
+exports[`Storyshots WeatherCard when the weather is normal 1`] = `
 <article
-  className="Card-container flex CityCard-card CityCard-alt"
+  className="flex sc-fjdhpX ewbmre sc-bdVaJa bZmLVk"
 >
   <h3
-    className="Card-title flex"
+    className="flex sc-bwzfXH lkZqCK"
   >
     City, CC
   </h3>
   <div
-    className="CityCard-container flex"
+    className="flex sc-jzJRlG bJGuIR"
   >
     <div
-      className="CityCardContent-container flex"
+      className="flex sc-ifAKCX qHQFp"
     >
       <span
-        className="CityCardContent-value CityCardContent-normal flex"
+        className="flex sc-bZQynM cZXHjN sc-EHOje jwUnvU"
+        value={20}
       >
         20
       </span>
       <span
-        className="CityCardContent-unity CityCardContent-normal flex"
+        className="flex sc-gzVnrw eGXRWR sc-EHOje jwUnvU"
+        value={20}
       >
         °
       </span>
     </div>
     <div
-      className="CityCardFooter-container CityCardFooter-alt flex"
+      className="flex sc-gZMcBi hlYHSO"
+      type="alt"
     >
       <div
-        className="CityCardFooter-row-bottom flex Grid-fd-row Grid-fjc-center Grid-fas-unset"
+        className="flex sc-htpNat fYveYQ"
+        direction="row"
       >
         <span
-          className="CityCardFooter-updated alt"
+          className="sc-gqjmRU eCALHE"
+          type="alt"
         >
           Updated at 
           10:51:00 PM
@@ -546,24 +600,25 @@ exports[`Storyshots CityCard when the weather is normal 1`] = `
 </article>
 `;
 
-exports[`Storyshots CityCard when the weather value is loading 1`] = `
+exports[`Storyshots WeatherCard when the weather value is loading 1`] = `
 <article
-  className="Card-container flex CityCard-card CityCard-alt"
+  className="flex sc-fjdhpX ewbmre sc-bdVaJa bZmLVk"
 >
   <h3
-    className="Card-title flex"
+    className="flex sc-bwzfXH lkZqCK"
   >
     City, CC
   </h3>
   <div
-    className="CityCard-container flex"
+    className="flex sc-jzJRlG bJGuIR"
   >
     <div
-      className="Grid-default flex Grid-fd-column Grid-fjc-center Grid-fas-unset"
+      className="flex sc-htpNat hLwoui"
+      direction="column"
     >
       <img
         alt="Loading"
-        className="Loading-img flex"
+        className="flex sc-bxivhb gdnUgh"
         src="loading.svg"
       />
     </div>
