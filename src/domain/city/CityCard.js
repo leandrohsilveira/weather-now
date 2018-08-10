@@ -6,9 +6,24 @@ import CityCardContent from './CityCardContent';
 import CityCardFooter from './CityCardFooter';
 import CityCardError from './CityCardError';
 
-import './CityCard.css';
+import styled from 'styled-components';
 
-const CityCard = ({ 
+const Root = styled(Card)`
+
+    min-height: ${props => props.type === 'main' ? 267 : 222}px;
+
+    @media screen and (max-width: 599px) {
+        order: ${props => props.type === 'main' ? 1 : 2};
+    }
+`
+
+const Container = styled.div`
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+`
+
+const CityCard = ({
     loading,
     date,
     title,
@@ -18,23 +33,23 @@ const CityCard = ({
     unity,
     type = 'alt',
     error,
-    onTryAgain 
+    onTryAgain
 }) => (
-    <Card title={title} className={`CityCard-card CityCard-${type}`}>
-        <div className={`CityCard-container flex`}>
-            <Loading loading={loading}>
-                <CityCardError error={error} onTryAgain={onTryAgain}>
-                    <CityCardContent value={value} unity={unity} />
-                    <CityCardFooter 
-                        date={date}
-                        type={type} 
-                        humidity={humidity} 
-                        pressure={pressure} 
-                    />
-                </CityCardError>
-            </Loading>
-        </div>
-    </Card>
-);
+        <Root title={title} type={type}>
+            <Container className="flex">
+                <Loading loading={loading}>
+                    <CityCardError error={error} onTryAgain={onTryAgain}>
+                        <CityCardContent value={value} unity={unity} />
+                        <CityCardFooter
+                            date={date}
+                            type={type}
+                            humidity={humidity}
+                            pressure={pressure}
+                        />
+                    </CityCardError>
+                </Loading>
+            </Container>
+        </Root>
+    );
 
 export default CityCard;
