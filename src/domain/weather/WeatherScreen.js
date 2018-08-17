@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import CardGrid from './../../components/card/CardGrid';
 import WeatherCard from './WeatherCard';
-import { restoreWeather, restoreCityWeather, getWeatherState } from './weatherModule';
+import { restoreWeather, restoreCityWeather, getWeatherState } from './';
 
 const mapStateToProps = state => ({
     cities: getWeatherState(state)

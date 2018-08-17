@@ -1,4 +1,4 @@
-import composer from 'redux-loop-composer';
+import { Domain } from 'redux-loop-composer';
 import weatherService from './weatherService';
 
 const INITIAL_STATE = {
@@ -17,11 +17,11 @@ const INITIAL_STATE = {
     },
 }
 
-const weatherModule = composer.create('weather');
+const weatherDomain = new Domain('weather');
 
-const reducer = weatherModule.reducer(INITIAL_STATE);
-const sideEffects = weatherModule.sideEffects();
-const action = weatherModule.action;
+const reducer = weatherDomain.reducer(INITIAL_STATE);
+const sideEffects = weatherDomain.sideEffects();
+const action = weatherDomain.action;
 
 // restoreWeather
 export const restoreWeather = () => action('restoreWeather').noPayload();
@@ -39,9 +39,9 @@ export const restoreCityWeather = (cityRef) => action('restoreCityWeather').payl
 sideEffects
     .when('restoreCityWeather')
     .run(weatherService.restoreCache)
-    .args(({cityRef}) => [cityRef])
-    .then(({cityRef, city}) => storeCityWeather(cityRef, city, false))
-    .catch(({cityRef}) => fetchCityWeather(cityRef))
+    .args(({ cityRef }) => [cityRef])
+    .then(({ cityRef, city }) => storeCityWeather(cityRef, city, false))
+    .catch(({ cityRef }) => fetchCityWeather(cityRef))
     .end();
 
 // fetchCityWeather
@@ -53,7 +53,7 @@ reducer
 
 sideEffects
     .when('fetchCityWeather')
-    .cmd((cmd, {cityRef}) => cmd.run(
+    .cmd((cmd, { cityRef }) => cmd.run(
         weatherService.fetch,
         {
             args: [cityRef],
@@ -80,9 +80,9 @@ reducer
 sideEffects
     .when('storeCityWeather')
     .run(weatherService.storeCache)
-    .args(({cityRef, city, persist}) => [cityRef, city, persist])
+    .args(({ cityRef, city, persist }) => [cityRef, city, persist])
     .end();
 
-export const getWeatherState = state => weatherModule.fromStore(state).getState();
+export const getWeatherState = state => weatherDomain.fromStore(state).getState();
 
-export default weatherModule;
+export default weatherDomain;
